@@ -68,21 +68,21 @@ const BasicForm = (props) => {
     <form onSubmit={formSubmitHandler}>
       <div className="control-group">
         <div className={firstNameClasses}>
-          <label htmlFor="name">First Name</label>
-          <input type="text" id="name" value={enteredFirstName} onChange={firstNameChangeHandler} onBlur={firstNameBlurHandler} />
+          <label htmlFor="firstName">First Name</label>
+          <input type="text" id="firstName" value={enteredFirstName} onChange={firstNameChangeHandler} onBlur={firstNameBlurHandler} />
+          { firstNameHasError && <p className={firstNameClasses}>Please enter a first name.</p> }
         </div>
-        { firstNameHasError && <p className={firstNameClasses}>Please enter a first name.</p> }
         <div className={lastNameClasses}>
-          <label htmlFor="name">Last Name</label>
-          <input type="text" id="name" value={enteredLastName} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} />
+          <label htmlFor="lastName">Last Name</label>
+          <input type="text" id="lastName" value={enteredLastName} onChange={lastNameChangeHandler} onBlur={lastNameBlurHandler} />
+          { lastNameHasError && <p className={lastNameClasses}>Please enter a last name.</p> }
         </div>
-        { lastNameHasError && <p className={lastNameClasses}>Please enter a last name.</p> }
       </div>
       <div className={emailClasses}>
-        <label htmlFor="name">E-Mail Address</label>
-        <input type="text" id="name" value={enteredEmail} onChange={emailChangeHandler} onBlur={emailBlurHandler} />
+        <label htmlFor="email">E-Mail Address</label>
+        <input type="email" id="email" value={enteredEmail} onChange={emailChangeHandler} onBlur={emailBlurHandler} />
+        { emailHasError && <p className={emailClasses}>Please enter a valid email.</p> }
       </div>
-      { emailHasError && <p className={emailClasses}>Please enter a valid email.</p> }
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>
       </div>
